@@ -28,17 +28,21 @@ public class Main {
         int user=Integer.parseInt(userId);
         while(true){
             try{
-                String method=JOptionPane.showInputDialog("Insert the operation (Create Claim, Add Document, Retrieve Documents, Exit)");
+                String method=JOptionPane.showInputDialog("Insert the operation:"+"\n"+
+                        "[1] Create Claim" + "\n" +
+                        "[2] Add Document"+"\n"+
+                        "[3] Retrieve Documents"+"\n"+
+                        "Exit");
                 if (method.equals("Exit")){
                     break;
                 }
-                if (method.equals("Create Claim")){
+                if (method.equals("1")){
                     String description=JOptionPane.showInputDialog("Insert the claim description");
                     int uuid=claimDataStore.createClaim(description,user);
                     String claim= claimDataStore.claimToString(uuid);
                     JOptionPane.showMessageDialog(null, "Claim created successfully: "+ claim);
                 }
-                if (method.equals("Add Document")){
+                if (method.equals("2")){
                     String uuid=JOptionPane.showInputDialog("Insert the claim identifier");
                     int id=Integer.parseInt(uuid);
                     String fileName=JOptionPane.showInputDialog("Insert the name of the file");
@@ -47,7 +51,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, "Document added successfully");
                 }
 
-                if (method.equals("Retrieve Documents")){
+                if (method.equals("3")){
                     String uuid=JOptionPane.showInputDialog("Insert the claim identifier");
                     int id=Integer.parseInt(uuid);
                     JOptionPane.showMessageDialog(null, claimDataStore.getDocumentsByClaim(id));

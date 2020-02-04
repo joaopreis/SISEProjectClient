@@ -41,14 +41,14 @@ public interface ClaimDataStore {
      * 
      * @param arg0
      * @return
-     *     returns com.insure.client.gen.Claim
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaim")
-    @ResponseWrapper(localName = "getClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getClaimRequest", output = "http://server.insure.com/ClaimDataStore/getClaimResponse")
-    public Claim getClaim(
+    @RequestWrapper(localName = "getDocumentsByClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentsByClaim")
+    @ResponseWrapper(localName = "getDocumentsByClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentsByClaimResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getDocumentsByClaimRequest", output = "http://server.insure.com/ClaimDataStore/getDocumentsByClaimResponse")
+    public String getDocumentsByClaim(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
@@ -60,10 +60,48 @@ public interface ClaimDataStore {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getDocumentsByClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentsByClaim")
-    @ResponseWrapper(localName = "getDocumentsByClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentsByClaimResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getDocumentsByClaimRequest", output = "http://server.insure.com/ClaimDataStore/getDocumentsByClaimResponse")
-    public String getDocumentsByClaim(
+    @RequestWrapper(localName = "claimToString", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimToString")
+    @ResponseWrapper(localName = "claimToStringResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimToStringResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/claimToStringRequest", output = "http://server.insure.com/ClaimDataStore/claimToStringResponse")
+    public String claimToString(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns int
+     * @throws Exception_Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "createClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.CreateClaim")
+    @ResponseWrapper(localName = "createClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.CreateClaimResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/createClaimRequest", output = "http://server.insure.com/ClaimDataStore/createClaimResponse", fault = {
+        @FaultAction(className = Exception_Exception.class, value = "http://server.insure.com/ClaimDataStore/createClaim/Fault/Exception")
+    })
+    public int createClaim(
+        @WebParam(name = "arg0", targetNamespace = "")
+        String arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1)
+        throws Exception_Exception
+    ;
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns com.insure.client.gen.Claim
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaim")
+    @ResponseWrapper(localName = "getClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getClaimRequest", output = "http://server.insure.com/ClaimDataStore/getClaimResponse")
+    public Claim getClaim(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
@@ -97,41 +135,6 @@ public interface ClaimDataStore {
      * 
      * @param arg1
      * @param arg0
-     * @return
-     *     returns int
-     * @throws Exception_Exception
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "createClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.CreateClaim")
-    @ResponseWrapper(localName = "createClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.CreateClaimResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/createClaimRequest", output = "http://server.insure.com/ClaimDataStore/createClaimResponse", fault = {
-        @FaultAction(className = Exception_Exception.class, value = "http://server.insure.com/ClaimDataStore/createClaim/Fault/Exception")
-    })
-    public int createClaim(
-        @WebParam(name = "arg0", targetNamespace = "")
-        String arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1)
-        throws Exception_Exception
-    ;
-
-    /**
-     * 
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getUuid", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetUuid")
-    @ResponseWrapper(localName = "getUuidResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetUuidResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getUuidRequest", output = "http://server.insure.com/ClaimDataStore/getUuidResponse")
-    public int getUuid();
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
      */
     @WebMethod
     @RequestWrapper(localName = "updateClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.UpdateClaim")
@@ -145,17 +148,14 @@ public interface ClaimDataStore {
 
     /**
      * 
-     * @param arg0
      * @return
-     *     returns java.lang.String
+     *     returns int
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "claimToString", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimToString")
-    @ResponseWrapper(localName = "claimToStringResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimToStringResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/claimToStringRequest", output = "http://server.insure.com/ClaimDataStore/claimToStringResponse")
-    public String claimToString(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+    @RequestWrapper(localName = "getUuid", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetUuid")
+    @ResponseWrapper(localName = "getUuidResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetUuidResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getUuidRequest", output = "http://server.insure.com/ClaimDataStore/getUuidResponse")
+    public int getUuid();
 
 }
