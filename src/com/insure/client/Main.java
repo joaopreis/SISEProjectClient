@@ -7,6 +7,7 @@ import com.insure.client.gen.ClaimDataStoreService;
 
 import javax.swing.*;
 import javax.xml.ws.BindingProvider;
+import java.security.Signature;
 
 public class Main {
     public static void main(String args[]){
@@ -45,6 +46,13 @@ public class Main {
                 if (method.equals("2")){
                     String uuid=JOptionPane.showInputDialog("Insert the claim identifier");
                     int id=Integer.parseInt(uuid);
+
+                    String pathprivatekey="keys\\privateKeys\\user"+user+"\\user"+user+"PrivateKey";
+
+
+
+
+
                     String fileName=JOptionPane.showInputDialog("Insert the name of the file");
                     String content=JOptionPane.showInputDialog("Insert the content of the document");
                     claimDataStore.addDocToClaim(id, fileName,content,user);
