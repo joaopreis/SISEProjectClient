@@ -17,12 +17,12 @@ public class Signature {
 
 
 
-    public Signature(String message) throws java.lang.Exception {
+    public Signature(String message){
         //basicamente guardamos apenas a mensagem que queremos encriptar ou desencriptar
         // e guardamos a path da chave que vamos usar
         this.message=message;
-
     }
+
     //este metodo pega na mensagem que queremos enviar e cria o seu hash baseado no sha-256
     public String makeHash(String message) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest digest=MessageDigest.getInstance("SHA-256");

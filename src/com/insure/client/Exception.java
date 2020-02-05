@@ -1,5 +1,5 @@
 
-package cs.insure.client;
+package com.insure.client;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -7,16 +7,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for document complex type.
+ * <p>Java class for Exception complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="document"&gt;
+ * &lt;complexType name="Exception"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="content" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="message" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,35 +26,35 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "document", propOrder = {
-    "content"
+@XmlType(name = "Exception", propOrder = {
+    "message"
 })
-public class Document {
+public class Exception {
 
-    protected String content;
+    protected String message;
 
     /**
-     * Gets the value of the content property.
+     * Gets the value of the message property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getContent() {
-        return content;
+    public String getMessage() {
+        return message;
     }
 
     /**
-     * Sets the value of the content property.
+     * Sets the value of the message property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setContent(String value) {
-        this.content = value;
+    public void setMessage(String value) {
+        this.message = value;
     }
 
 }

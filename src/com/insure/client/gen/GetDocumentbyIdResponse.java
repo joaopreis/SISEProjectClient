@@ -1,22 +1,23 @@
 
-package cs.insure.client;
+package com.insure.client.gen;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for document complex type.
+ * <p>Java class for getDocumentbyIdResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="document"&gt;
+ * &lt;complexType name="getDocumentbyIdResponse"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="content" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/&gt;
+ *         &lt;element name="return" type="{http://server.insure.com/}document" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,35 +27,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "document", propOrder = {
-    "content"
+@XmlType(name = "getDocumentbyIdResponse", propOrder = {
+    "_return"
 })
-public class Document {
+public class GetDocumentbyIdResponse {
 
-    protected String content;
+    @XmlElement(name = "return")
+    protected Document _return;
 
     /**
-     * Gets the value of the content property.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Document }
      *     
      */
-    public String getContent() {
-        return content;
+    public Document getReturn() {
+        return _return;
     }
 
     /**
-     * Sets the value of the content property.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Document }
      *     
      */
-    public void setContent(String value) {
-        this.content = value;
+    public void setReturn(Document value) {
+        this._return = value;
     }
 
 }
