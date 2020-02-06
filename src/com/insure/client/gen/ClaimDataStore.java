@@ -39,39 +39,6 @@ public interface ClaimDataStore {
 
     /**
      * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "userValidation", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.UserValidation")
-    @ResponseWrapper(localName = "userValidationResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.UserValidationResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/userValidationRequest", output = "http://server.insure.com/ClaimDataStore/userValidationResponse")
-    public boolean userValidation(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns com.insure.client.gen.Claim
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaim")
-    @ResponseWrapper(localName = "getClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getClaimRequest", output = "http://server.insure.com/ClaimDataStore/getClaimResponse")
-    public Claim getClaim(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
      * @param arg3
      * @param arg2
      * @param arg4
@@ -103,6 +70,21 @@ public interface ClaimDataStore {
      * 
      * @param arg0
      * @return
+     *     returns com.insure.client.gen.Claim
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaim")
+    @ResponseWrapper(localName = "getClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getClaimRequest", output = "http://server.insure.com/ClaimDataStore/getClaimResponse")
+    public Claim getClaim(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
      *     returns boolean
      */
     @WebMethod
@@ -111,54 +93,6 @@ public interface ClaimDataStore {
     @ResponseWrapper(localName = "claimValidationResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimValidationResponse")
     @Action(input = "http://server.insure.com/ClaimDataStore/claimValidationRequest", output = "http://server.insure.com/ClaimDataStore/claimValidationResponse")
     public boolean claimValidation(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "claimExistence", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimExistence")
-    @ResponseWrapper(localName = "claimExistenceResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimExistenceResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/claimExistenceRequest", output = "http://server.insure.com/ClaimDataStore/claimExistenceResponse")
-    public boolean claimExistence(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns com.insure.client.gen.Document
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getDocumentbyId", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentbyId")
-    @ResponseWrapper(localName = "getDocumentbyIdResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentbyIdResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getDocumentbyIdRequest", output = "http://server.insure.com/ClaimDataStore/getDocumentbyIdResponse")
-    public Document getDocumentbyId(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-    /**
-     * 
-     * @param arg0
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getClaimSize", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimSize")
-    @ResponseWrapper(localName = "getClaimSizeResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimSizeResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getClaimSizeRequest", output = "http://server.insure.com/ClaimDataStore/getClaimSizeResponse")
-    public int getClaimSize(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0);
 
@@ -182,6 +116,75 @@ public interface ClaimDataStore {
      * @param arg1
      * @param arg0
      * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "userValidation", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.UserValidation")
+    @ResponseWrapper(localName = "userValidationResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.UserValidationResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/userValidationRequest", output = "http://server.insure.com/ClaimDataStore/userValidationResponse")
+    public boolean userValidation(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns com.insure.client.gen.Document
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getDocumentbyId", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentbyId")
+    @ResponseWrapper(localName = "getDocumentbyIdResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocumentbyIdResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getDocumentbyIdRequest", output = "http://server.insure.com/ClaimDataStore/getDocumentbyIdResponse")
+    public Document getDocumentbyId(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "claimExistence", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimExistence")
+    @ResponseWrapper(localName = "claimExistenceResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ClaimExistenceResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/claimExistenceRequest", output = "http://server.insure.com/ClaimDataStore/claimExistenceResponse")
+    public boolean claimExistence(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getDocSignature", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocSignature")
+    @ResponseWrapper(localName = "getDocSignatureResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocSignatureResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getDocSignatureRequest", output = "http://server.insure.com/ClaimDataStore/getDocSignatureResponse")
+    public String getDocSignature(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
      *     returns java.lang.String
      */
     @WebMethod
@@ -190,6 +193,24 @@ public interface ClaimDataStore {
     @ResponseWrapper(localName = "getDocContentResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocContentResponse")
     @Action(input = "http://server.insure.com/ClaimDataStore/getDocContentRequest", output = "http://server.insure.com/ClaimDataStore/getDocContentResponse")
     public String getDocContent(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0,
+        @WebParam(name = "arg1", targetNamespace = "")
+        int arg1);
+
+    /**
+     * 
+     * @param arg1
+     * @param arg0
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "readDocument", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ReadDocument")
+    @ResponseWrapper(localName = "readDocumentResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ReadDocumentResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/readDocumentRequest", output = "http://server.insure.com/ClaimDataStore/readDocumentResponse")
+    public String readDocument(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
@@ -212,6 +233,36 @@ public interface ClaimDataStore {
         int arg1,
         @WebParam(name = "arg2", targetNamespace = "")
         String arg2);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "isEmployee", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.IsEmployee")
+    @ResponseWrapper(localName = "isEmployeeResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.IsEmployeeResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/isEmployeeRequest", output = "http://server.insure.com/ClaimDataStore/isEmployeeResponse")
+    public boolean isEmployee(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getClaimSize", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimSize")
+    @ResponseWrapper(localName = "getClaimSizeResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetClaimSizeResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/getClaimSizeRequest", output = "http://server.insure.com/ClaimDataStore/getClaimSizeResponse")
+    public int getClaimSize(
+        @WebParam(name = "arg0", targetNamespace = "")
+        int arg0);
 
     /**
      * 
@@ -268,39 +319,32 @@ public interface ClaimDataStore {
 
     /**
      * 
+     * @param arg3
+     * @param arg2
+     * @param arg4
      * @param arg1
      * @param arg0
-     * @return
-     *     returns java.lang.String
+     * @throws Exception_Exception
      */
     @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "readDocument", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ReadDocument")
-    @ResponseWrapper(localName = "readDocumentResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.ReadDocumentResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/readDocumentRequest", output = "http://server.insure.com/ClaimDataStore/readDocumentResponse")
-    public String readDocument(
+    @RequestWrapper(localName = "addTamperedDocToClaim", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.AddTamperedDocToClaim")
+    @ResponseWrapper(localName = "addTamperedDocToClaimResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.AddTamperedDocToClaimResponse")
+    @Action(input = "http://server.insure.com/ClaimDataStore/addTamperedDocToClaimRequest", output = "http://server.insure.com/ClaimDataStore/addTamperedDocToClaimResponse", fault = {
+        @FaultAction(className = Exception_Exception.class, value = "http://server.insure.com/ClaimDataStore/addTamperedDocToClaim/Fault/Exception")
+    })
+    public void addTamperedDocToClaim(
         @WebParam(name = "arg0", targetNamespace = "")
         int arg0,
         @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
-
-    /**
-     * 
-     * @param arg1
-     * @param arg0
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getDocSignature", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocSignature")
-    @ResponseWrapper(localName = "getDocSignatureResponse", targetNamespace = "http://server.insure.com/", className = "com.insure.client.gen.GetDocSignatureResponse")
-    @Action(input = "http://server.insure.com/ClaimDataStore/getDocSignatureRequest", output = "http://server.insure.com/ClaimDataStore/getDocSignatureResponse")
-    public String getDocSignature(
-        @WebParam(name = "arg0", targetNamespace = "")
-        int arg0,
-        @WebParam(name = "arg1", targetNamespace = "")
-        int arg1);
+        String arg1,
+        @WebParam(name = "arg2", targetNamespace = "")
+        String arg2,
+        @WebParam(name = "arg3", targetNamespace = "")
+        int arg3,
+        @WebParam(name = "arg4", targetNamespace = "")
+        String arg4)
+        throws Exception_Exception
+    ;
 
     /**
      * 

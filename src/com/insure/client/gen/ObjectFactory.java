@@ -27,6 +27,8 @@ public class ObjectFactory {
     private final static QName _Exception_QNAME = new QName("http://server.insure.com/", "Exception");
     private final static QName _AddDocToClaim_QNAME = new QName("http://server.insure.com/", "addDocToClaim");
     private final static QName _AddDocToClaimResponse_QNAME = new QName("http://server.insure.com/", "addDocToClaimResponse");
+    private final static QName _AddTamperedDocToClaim_QNAME = new QName("http://server.insure.com/", "addTamperedDocToClaim");
+    private final static QName _AddTamperedDocToClaimResponse_QNAME = new QName("http://server.insure.com/", "addTamperedDocToClaimResponse");
     private final static QName _ClaimExistence_QNAME = new QName("http://server.insure.com/", "claimExistence");
     private final static QName _ClaimExistenceResponse_QNAME = new QName("http://server.insure.com/", "claimExistenceResponse");
     private final static QName _ClaimToString_QNAME = new QName("http://server.insure.com/", "claimToString");
@@ -51,6 +53,8 @@ public class ObjectFactory {
     private final static QName _GetDocumentsByClaimResponse_QNAME = new QName("http://server.insure.com/", "getDocumentsByClaimResponse");
     private final static QName _GetUuid_QNAME = new QName("http://server.insure.com/", "getUuid");
     private final static QName _GetUuidResponse_QNAME = new QName("http://server.insure.com/", "getUuidResponse");
+    private final static QName _IsEmployee_QNAME = new QName("http://server.insure.com/", "isEmployee");
+    private final static QName _IsEmployeeResponse_QNAME = new QName("http://server.insure.com/", "isEmployeeResponse");
     private final static QName _ReadDocument_QNAME = new QName("http://server.insure.com/", "readDocument");
     private final static QName _ReadDocumentResponse_QNAME = new QName("http://server.insure.com/", "readDocumentResponse");
     private final static QName _SignatureValidation_QNAME = new QName("http://server.insure.com/", "signatureValidation");
@@ -91,6 +95,22 @@ public class ObjectFactory {
      */
     public AddDocToClaimResponse createAddDocToClaimResponse() {
         return new AddDocToClaimResponse();
+    }
+
+    /**
+     * Create an instance of {@link AddTamperedDocToClaim }
+     * 
+     */
+    public AddTamperedDocToClaim createAddTamperedDocToClaim() {
+        return new AddTamperedDocToClaim();
+    }
+
+    /**
+     * Create an instance of {@link AddTamperedDocToClaimResponse }
+     * 
+     */
+    public AddTamperedDocToClaimResponse createAddTamperedDocToClaimResponse() {
+        return new AddTamperedDocToClaimResponse();
     }
 
     /**
@@ -286,6 +306,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link IsEmployee }
+     * 
+     */
+    public IsEmployee createIsEmployee() {
+        return new IsEmployee();
+    }
+
+    /**
+     * Create an instance of {@link IsEmployeeResponse }
+     * 
+     */
+    public IsEmployeeResponse createIsEmployeeResponse() {
+        return new IsEmployeeResponse();
+    }
+
+    /**
      * Create an instance of {@link ReadDocument }
      * 
      */
@@ -426,6 +462,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.insure.com/", name = "addDocToClaimResponse")
     public JAXBElement<AddDocToClaimResponse> createAddDocToClaimResponse(AddDocToClaimResponse value) {
         return new JAXBElement<AddDocToClaimResponse>(_AddDocToClaimResponse_QNAME, AddDocToClaimResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddTamperedDocToClaim }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AddTamperedDocToClaim }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "addTamperedDocToClaim")
+    public JAXBElement<AddTamperedDocToClaim> createAddTamperedDocToClaim(AddTamperedDocToClaim value) {
+        return new JAXBElement<AddTamperedDocToClaim>(_AddTamperedDocToClaim_QNAME, AddTamperedDocToClaim.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AddTamperedDocToClaimResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link AddTamperedDocToClaimResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "addTamperedDocToClaimResponse")
+    public JAXBElement<AddTamperedDocToClaimResponse> createAddTamperedDocToClaimResponse(AddTamperedDocToClaimResponse value) {
+        return new JAXBElement<AddTamperedDocToClaimResponse>(_AddTamperedDocToClaimResponse_QNAME, AddTamperedDocToClaimResponse.class, null, value);
     }
 
     /**
@@ -738,6 +800,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.insure.com/", name = "getUuidResponse")
     public JAXBElement<GetUuidResponse> createGetUuidResponse(GetUuidResponse value) {
         return new JAXBElement<GetUuidResponse>(_GetUuidResponse_QNAME, GetUuidResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsEmployee }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link IsEmployee }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "isEmployee")
+    public JAXBElement<IsEmployee> createIsEmployee(IsEmployee value) {
+        return new JAXBElement<IsEmployee>(_IsEmployee_QNAME, IsEmployee.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsEmployeeResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link IsEmployeeResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "isEmployeeResponse")
+    public JAXBElement<IsEmployeeResponse> createIsEmployeeResponse(IsEmployeeResponse value) {
+        return new JAXBElement<IsEmployeeResponse>(_IsEmployeeResponse_QNAME, IsEmployeeResponse.class, null, value);
     }
 
     /**
