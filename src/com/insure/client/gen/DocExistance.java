@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for claimToString complex type.
+ * <p>Java class for docExistance complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="claimToString"&gt;
+ * &lt;complexType name="docExistance"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "claimToString", propOrder = {
+@XmlType(name = "docExistance", propOrder = {
     "arg0",
     "arg1"
 })
-public class ClaimToString {
+public class DocExistance {
 
     protected int arg0;
     protected int arg1;

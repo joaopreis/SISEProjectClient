@@ -37,6 +37,8 @@ public class ObjectFactory {
     private final static QName _ClaimValidationResponse_QNAME = new QName("http://server.insure.com/", "claimValidationResponse");
     private final static QName _CreateClaim_QNAME = new QName("http://server.insure.com/", "createClaim");
     private final static QName _CreateClaimResponse_QNAME = new QName("http://server.insure.com/", "createClaimResponse");
+    private final static QName _DocExistance_QNAME = new QName("http://server.insure.com/", "docExistance");
+    private final static QName _DocExistanceResponse_QNAME = new QName("http://server.insure.com/", "docExistanceResponse");
     private final static QName _GetClaim_QNAME = new QName("http://server.insure.com/", "getClaim");
     private final static QName _GetClaimResponse_QNAME = new QName("http://server.insure.com/", "getClaimResponse");
     private final static QName _GetClaimSize_QNAME = new QName("http://server.insure.com/", "getClaimSize");
@@ -175,6 +177,22 @@ public class ObjectFactory {
      */
     public CreateClaimResponse createCreateClaimResponse() {
         return new CreateClaimResponse();
+    }
+
+    /**
+     * Create an instance of {@link DocExistance }
+     * 
+     */
+    public DocExistance createDocExistance() {
+        return new DocExistance();
+    }
+
+    /**
+     * Create an instance of {@link DocExistanceResponse }
+     * 
+     */
+    public DocExistanceResponse createDocExistanceResponse() {
+        return new DocExistanceResponse();
     }
 
     /**
@@ -592,6 +610,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.insure.com/", name = "createClaimResponse")
     public JAXBElement<CreateClaimResponse> createCreateClaimResponse(CreateClaimResponse value) {
         return new JAXBElement<CreateClaimResponse>(_CreateClaimResponse_QNAME, CreateClaimResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DocExistance }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DocExistance }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "docExistance")
+    public JAXBElement<DocExistance> createDocExistance(DocExistance value) {
+        return new JAXBElement<DocExistance>(_DocExistance_QNAME, DocExistance.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link DocExistanceResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link DocExistanceResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "docExistanceResponse")
+    public JAXBElement<DocExistanceResponse> createDocExistanceResponse(DocExistanceResponse value) {
+        return new JAXBElement<DocExistanceResponse>(_DocExistanceResponse_QNAME, DocExistanceResponse.class, null, value);
     }
 
     /**
