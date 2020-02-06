@@ -43,8 +43,15 @@ public class Main extends JFrame {
 
         final ImageIcon icon1=new ImageIcon("addons\\insure_logo_correction_1.png");
         JFrame frame=new JFrame();
-        JOptionPane.showMessageDialog(frame,"","INSURE",JOptionPane.INFORMATION_MESSAGE,icon1);
+        Object[] initial={"Continue","Exit"};
+        int n=JOptionPane.showOptionDialog(frame,"Welcome to ClaimDatStore","InSure",JOptionPane.YES_NO_CANCEL_OPTION,
+                JOptionPane.INFORMATION_MESSAGE,icon1,initial,initial[0]);
+
+        //Dialog(frame,"Welcome to ClaimDataStore","InSure",JOptionPane.INFORMATION_MESSAGE,icon1);
         String userId=JOptionPane.showInputDialog(frame,"Insert your user Id:");
+        if(userId==null){
+
+        }
         while (userId!=null) {
             while (userId.equals("")) {
                 userId = JOptionPane.showInputDialog("Insert your user Id: (Mandatory)");
@@ -52,6 +59,11 @@ public class Main extends JFrame {
                     break;
                 }
             }
+            if(userId==null){
+                break;
+            }
+            break;
+
         }
         PlaySound(Login);
 
@@ -68,7 +80,7 @@ public class Main extends JFrame {
                 if (claimDataStore.isEmployee(user)){
                     Object[] objects={"Add Document","Retrieve Documents","Read Document","Read Claim","Update Document (For testing reasons)",
                             "Add Tampered Document","Exit"};
-                    i=JOptionPane.showOptionDialog(frame,"Choose the operation","Insure Claim Data Store",
+                    i=JOptionPane.showOptionDialog(frame,"Choose the operation","InSure Claim Data Store",
                             JOptionPane.YES_NO_CANCEL_OPTION,JOptionPane.QUESTION_MESSAGE,null,objects,objects[0]);
                     i++;
                 }else{
