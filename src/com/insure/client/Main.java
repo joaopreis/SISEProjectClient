@@ -45,6 +45,14 @@ public class Main extends JFrame {
         JFrame frame=new JFrame();
         JOptionPane.showMessageDialog(frame,"","INSURE",JOptionPane.INFORMATION_MESSAGE,icon1);
         String userId=JOptionPane.showInputDialog(frame,"Insert your user Id:");
+        while (userId!=null) {
+            while (userId.equals("")) {
+                userId = JOptionPane.showInputDialog("Insert your user Id: (Mandatory)");
+                if (userId == null) {
+                    break;
+                }
+            }
+        }
         PlaySound(Login);
 
 
