@@ -57,6 +57,8 @@ public class ObjectFactory {
     private final static QName _GetUuidResponse_QNAME = new QName("http://server.insure.com/", "getUuidResponse");
     private final static QName _IsEmployee_QNAME = new QName("http://server.insure.com/", "isEmployee");
     private final static QName _IsEmployeeResponse_QNAME = new QName("http://server.insure.com/", "isEmployeeResponse");
+    private final static QName _IsInsured_QNAME = new QName("http://server.insure.com/", "isInsured");
+    private final static QName _IsInsuredResponse_QNAME = new QName("http://server.insure.com/", "isInsuredResponse");
     private final static QName _ReadDocument_QNAME = new QName("http://server.insure.com/", "readDocument");
     private final static QName _ReadDocumentResponse_QNAME = new QName("http://server.insure.com/", "readDocumentResponse");
     private final static QName _SignatureValidation_QNAME = new QName("http://server.insure.com/", "signatureValidation");
@@ -337,6 +339,22 @@ public class ObjectFactory {
      */
     public IsEmployeeResponse createIsEmployeeResponse() {
         return new IsEmployeeResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsInsured }
+     * 
+     */
+    public IsInsured createIsInsured() {
+        return new IsInsured();
+    }
+
+    /**
+     * Create an instance of {@link IsInsuredResponse }
+     * 
+     */
+    public IsInsuredResponse createIsInsuredResponse() {
+        return new IsInsuredResponse();
     }
 
     /**
@@ -870,6 +888,32 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://server.insure.com/", name = "isEmployeeResponse")
     public JAXBElement<IsEmployeeResponse> createIsEmployeeResponse(IsEmployeeResponse value) {
         return new JAXBElement<IsEmployeeResponse>(_IsEmployeeResponse_QNAME, IsEmployeeResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsInsured }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link IsInsured }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "isInsured")
+    public JAXBElement<IsInsured> createIsInsured(IsInsured value) {
+        return new JAXBElement<IsInsured>(_IsInsured_QNAME, IsInsured.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsInsuredResponse }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link IsInsuredResponse }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://server.insure.com/", name = "isInsuredResponse")
+    public JAXBElement<IsInsuredResponse> createIsInsuredResponse(IsInsuredResponse value) {
+        return new JAXBElement<IsInsuredResponse>(_IsInsuredResponse_QNAME, IsInsuredResponse.class, null, value);
     }
 
     /**

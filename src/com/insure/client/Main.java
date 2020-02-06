@@ -44,36 +44,53 @@ public class Main extends JFrame {
         final ImageIcon icon1=new ImageIcon("addons\\insure_logo_correction_1.png");
         JFrame frame=new JFrame();
         Object[] initial={"Continue","Exit"};
-        int n=JOptionPane.showOptionDialog(frame,"Welcome to ClaimDatStore","InSure",JOptionPane.YES_NO_CANCEL_OPTION,
-                JOptionPane.INFORMATION_MESSAGE,icon1,initial,initial[0]);
+        boolean menu=true;
+        String userId;
+        int user=-1;
 
-        //Dialog(frame,"Welcome to ClaimDataStore","InSure",JOptionPane.INFORMATION_MESSAGE,icon1);
-        String userId=JOptionPane.showInputDialog(frame,"Insert your user Id:");
-        if(userId==null){
+        while (menu){
+            int n=JOptionPane.showOptionDialog(frame,"Welcome to ClaimDatStore",
+                    "InSure",JOptionPane.YES_NO_CANCEL_OPTION,
+                    JOptionPane.INFORMATION_MESSAGE,icon1,initial,initial[0]);
 
-        }
-        while (userId!=null) {
-            while (userId.equals("")) {
-                userId = JOptionPane.showInputDialog("Insert your user Id: (Mandatory)");
-                if (userId == null) {
-                    break;
-                }
-            }
-            if(userId==null){
+            if (n==1){
+                menu=false;
+                PlaySound(Logoff);
                 break;
             }
-            break;
+            if(n==0){
+                System.out.println(n);
+                userId=JOptionPane.showInputDialog(frame,"Insert your user Id (Number):");
+                while(userId!=null){
+                    while(userId.equals("")){
+                        userId=JOptionPane.showInputDialog(frame,"Insert your user Id (Mandatory)");
 
+                        if (userId==null){
+                            break;
+                        }
+                    }
+                    if(userId==null){
+                        break;
+                    }
+
+                    user=Integer.parseInt(userId);
+                    break;
+                }
+                if (user!=-1) {
+
+                    if (claimDataStore.isEmployee(user) | claimDataStore.isInsured(user)) {
+                        PlaySound(Login);
+                        break;
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "Invalid user", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            }
         }
-        PlaySound(Login);
-
-
-        int user=Integer.parseInt(userId);
 
 
 
-
-        while(true){
+        while(menu){
 
             try{
                 int i;
@@ -361,7 +378,7 @@ public class Main extends JFrame {
 
                 }
 
-            } catch (Exception | Exception_Exception e) {
+            } catch (Exception | Exception_Exception | NumberFormatException e) {
                 PlaySound(errormessage);
                 JOptionPane.showMessageDialog(frame, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 
