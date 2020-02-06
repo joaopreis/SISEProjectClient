@@ -37,11 +37,11 @@ public class Main extends JFrame {
 
     public static void runClaimDataStore(ClaimDataStore claimDataStore) throws java.lang.Exception {
 
-        File errormessage = new File("C:\\Users\\joaoporeis\\Desktop\\SISE VI\\CS\\Lab\\Lab3\\SISEProjectClient\\addons\\Windows Error.wav");
-        File Logoff = new File("C:\\Users\\joaoporeis\\Desktop\\SISE VI\\CS\\Lab\\Lab3\\SISEProjectClient\\addons\\Windows Logoff Sound.wav");
-        File Login = new File("C:\\Users\\joaoporeis\\Desktop\\SISE VI\\CS\\Lab\\Lab3\\SISEProjectClient\\addons\\Windows Logon.wav");
+        File errormessage = new File("addons\\Windows Error.wav");
+        File Logoff = new File("addons\\Windows Logoff Sound.wav");
+        File Login = new File("addons\\Windows Logon.wav");
 
-        final ImageIcon icon1=new ImageIcon("C:\\Users\\joaoporeis\\Desktop\\SISE VI\\CS\\Lab\\Lab3\\SISEProjectClient\\addons\\insure_logo_correction_1.png");
+        final ImageIcon icon1=new ImageIcon("addons\\insure_logo_correction_1.png");
         JFrame frame=new JFrame();
         JOptionPane.showMessageDialog(frame,"","INSURE",JOptionPane.INFORMATION_MESSAGE,icon1);
         String userId=JOptionPane.showInputDialog(frame,"Insert your user Id:");
