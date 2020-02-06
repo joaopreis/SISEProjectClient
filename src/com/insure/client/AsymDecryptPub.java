@@ -1,4 +1,4 @@
-package cs;
+package com.insure.client;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;

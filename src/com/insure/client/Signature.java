@@ -1,4 +1,4 @@
-package cs;
+package com.insure.client;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
