@@ -56,7 +56,6 @@ public class Main extends JFrame {
                 break;
             }
             if(n==0){
-                System.out.println(n);
                 userId=JOptionPane.showInputDialog(frame,"Insert your user Id (Number):");
                 while(userId!=null){
                     while(userId.equals("")){
