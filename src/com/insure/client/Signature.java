@@ -29,13 +29,13 @@ public class Signature {
         return Base64.getEncoder().encodeToString(digest.digest(message.getBytes("UTF-8")));
     }
 
-    public String encriptarMessage(String hashmessage,String filename) throws java.lang.Exception {
+    public String encriptarMessage(String hashmessage,String filename) throws java.lang.Exception, Exception {
         AsymEncryptPriv PrivateEncrypt= new AsymEncryptPriv();
         this.privatekey=PrivateEncrypt.getPrivate(filename);
         return PrivateEncrypt.encryptText(hashmessage,privatekey);
 
     }
-    public String desencriptarMessage(String filename, String encryptedHash) throws java.lang.Exception {
+    public String desencriptarMessage(String filename, String encryptedHash) throws java.lang.Exception, Exception {
         AsymDecryptPub privateDesencrypt= new AsymDecryptPub();
         publickey=privateDesencrypt.getPublic(filename);
         return privateDesencrypt.decryptText(encryptedHash,publickey);
