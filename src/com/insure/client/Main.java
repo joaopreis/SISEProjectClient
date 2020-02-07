@@ -3,7 +3,6 @@ package com.insure.client;
 
 import com.insure.client.gen.ClaimDataStore;
 import com.insure.client.gen.ClaimDataStoreService;
-import com.insure.client.gen.Exception;
 import com.insure.client.gen.Exception_Exception;
 
 import javax.sound.sampled.AudioSystem;
@@ -14,8 +13,6 @@ import javax.swing.*;
 import javax.xml.ws.BindingProvider;
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.security.NoSuchAlgorithmException;
 
 public class Main extends JFrame {
     public static void main(String args[]) throws Exception, java.lang.Exception {
@@ -37,11 +34,11 @@ public class Main extends JFrame {
 
     public static void runClaimDataStore(ClaimDataStore claimDataStore) throws java.lang.Exception {
 
-        File errormessage = new File("addons\\Windows Error.wav");
-        File Logoff = new File("addons\\Windows Logoff Sound.wav");
-        File Login = new File("addons\\Windows Logon.wav");
+        File errormessage = new File("addons"+System.getProperty("file.separator")+"Windows Error.wav");
+        File Logoff = new File("addons"+System.getProperty("file.separator")+"Windows Logoff Sound.wav");
+        File Login = new File("addons"+System.getProperty("file.separator")+"Windows Logon.wav");
 
-        final ImageIcon icon1=new ImageIcon("addons\\insure_logo_correction_1.png");
+        final ImageIcon icon1=new ImageIcon("addons"+System.getProperty("file.separator")+"insure_logo_correction_1.png");
         JFrame frame=new JFrame();
         Object[] initial={"Continue","Exit"};
         boolean menu=true;
@@ -157,7 +154,7 @@ public class Main extends JFrame {
 
                 }
 
-            } catch (Exception | Exception_Exception | NumberFormatException e) {
+            } catch (Exception e) {
                 PlaySound(errormessage);
                 JOptionPane.showMessageDialog(frame, e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
 
@@ -208,7 +205,8 @@ public class Main extends JFrame {
                 break;
             }
 
-            String pathprivatekey = "keys\\privateKeys\\user" + user + "\\user" + user + "PrivateKey";
+            String pathprivatekey = "keys"+System.getProperty("file.separator")+"privateKeys"+System.getProperty("file.separator")+
+                    "user" + user + System.getProperty("file.separator")+"user" + user + "PrivateKey";
             Signature signature = new Signature(content);
 
             String Hash = signature.makeHash(content);
@@ -220,7 +218,7 @@ public class Main extends JFrame {
         }
     }
 
-    public static void updateDocument(ClaimDataStore claimDataStore) throws Exception_Exception {
+    public static void updateDocument(ClaimDataStore claimDataStore) throws Exception_Exception, Exception_Exception {
         String uuid = JOptionPane.showInputDialog("Insert the claim identifier");
         while (uuid != null) {
             while (uuid.equals("")) {
@@ -383,7 +381,8 @@ public class Main extends JFrame {
             }
 
 
-            String pathprivatekey = "keys\\privateKeys\\user" + user + "\\user" + user + "PrivateKey";
+            String pathprivatekey = "keys"+System.getProperty("file.separator")+"privateKeys"+System.getProperty("file.separator")+"user" + user +
+                    System.getProperty("file.separator")+"user" + user + "PrivateKey";
             Signature signature = new Signature(content);
 
             String Hash = signature.makeHash(content);
@@ -421,11 +420,9 @@ public class Main extends JFrame {
         Signature hashContent = new Signature(content);
         String contentHashed = hashContent.makeHash(content);
         Signature desencryptSignature = new Signature(signature);
-        String signatureDesencypted = desencryptSignature.desencriptarMessage("keys\\publicKeys\\user"+userId+"PublicKey", signature);
-        if (!contentHashed.equals(signatureDesencypted)) {
-            return false;
-        }
-        return true;
+        String signatureDesencypted = desencryptSignature.desencriptarMessage("keys"+System.getProperty("file.separator")+
+                "publicKeys"+System.getProperty("file.separator")+"user"+userId+"PublicKey", signature);
+        return (contentHashed.equals(signatureDesencypted));
     }
 
     static void PlaySound(File sound){
